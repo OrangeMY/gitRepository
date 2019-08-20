@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置Handler,即Controller的Bean -->
+    <bean id = "myHandler" class = "com.imooc.handler.MyHandler"/>
+
+    <!-- 配置HandlerMapping -->
+    <bean id="handlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <!-- 配置mapping -->
+        <property name="mappings">
+            <!-- 配置test请求对应的handler -->
+            <props>
+                <prop key="/test">myHandler</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 配置ViewResolver -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 配置前缀 -->
+        <property name="prefix" value="/"/>
+        <!-- 配置后缀 -->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+</beans>
