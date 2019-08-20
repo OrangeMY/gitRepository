@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="com.imooc"/>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--<mvc:mapping path="/user/search"/>-->
+            <!--<mvc:mapping path="/user/updatePwd"/>-->
+            <!--<mvc:mapping path="/user/updateHeaderPic"/>-->
+            <!-- 除了上述方法还可以使用下面这种方法，且下面这种方法更通用 -->
+            <!-- 两个*表示子子集也能被拦截 -->
+            <mvc:mapping path="/user/**"/>
+            <!-- 下面这个标签，用于排除某些不需要被拦截的方法 -->
+            <mvc:exclude-mapping path="/user/updateHeaderPic"/>
+            <bean  class="com.imooc.core.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+</beans>
