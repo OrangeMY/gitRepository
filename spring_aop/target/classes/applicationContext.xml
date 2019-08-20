@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置目标类-->
+    <bean id="studentDao" class="com.imooc.aop.demo3.StudentDaoImpl"/>
+
+    <!--配置通知类-->
+    <bean id="myBeforeAdvice" class="com.imooc.aop.demo3.MyBeforeAdvice"/>
+
+    <!--配置代理类-->
+    <bean id="studentDaoProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!--配置目标类-->
+        <property name="target" ref="studentDao"/>
+        <!--实现的接口-->
+        <property name="proxyInterfaces" value="com.imooc.aop.demo3.StudentDao"/>
+        <!--采用拦截的名称-->
+        <property name="interceptorNames" value="myBeforeAdvice"/>
+        <!--当目标类没有接口的时候，使用Cglib代理，则需要配置该属性-->
+        <!--proxyTargetClass : 是否对类代理而不是接口，设置为true，使用cglib代理-->
+        <!--<property name="proxyTargetClass" value="true"></property>-->
+
+        <!--当使用optimize属性时，设置为true，则强制使用cglib代理-->
+        <property name="optimize" value="true"/>
+    </bean>
+
+</beans>
