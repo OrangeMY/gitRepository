@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css"/>
+</head>
+<body>
+    <h1>hello</h1>
+    <p>jikexueyuan</p>
+    <ul>
+        <li>你</li>
+        <li>好</li>
+    </ul>
+
+    <!--HTML实体-->
+    abcd&lt;html&gt;
+
+    <hr/>
+
+    <!--article元素-->
+    <article>
+        <header>
+            <h1>极客学院</h1>
+            <p>Hello,欢迎来到极客学院</p>
+        </header>
+            <article>
+                <header>
+                    作者
+                </header>
+                <p>主要内容</p>
+                <footer>
+                    time
+                </footer>
+            </article>
+        <footer>
+            这是底部
+        </footer>
+    </article>
+
+    <article>
+        <h1>这是一个内嵌页面</h1>
+        <embed>
+            <embed src="#" width="600" height="400"/>
+        </object>
+    </article>
+
+    <hr/>
+    <!--aside元素第一种用法-->
+    <header>
+        <h1>js入门</h1>
+    </header>
+    <article>
+        <h1>语法</h1>
+        <p>文章的正文</p>
+        <aside>
+            <h1>名词解释</h1>
+            <p>语法：这是一个对语言来说很重要的内容体</p>
+        </aside>
+    </article>
+    <!--aside元素第二种用法：用于例如：某些博客中的侧边栏的链接-->
+    <aside>
+        <nav>
+            <h2>评论</h2>
+            <ul>
+                <li><a href="#">2019-4-12</a></li>
+                <li>
+                    <a href="#">
+                        大牛：真希望能好好学一下
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <hr/>
+
+    <!--time元素-->
+    <time datetime="2019-04-12">2019-04-13</time>
+    <!--pubdate属性-->
+    <article>
+        <header>
+            <h1>苹果</h1>
+            <p>发布日期：
+                <time datetime="2019-04-13" pubdate="true">2019-04-12</time>
+            </p>
+            <p>舞会时间：
+                <time datetime="2019-04-13">2019-04-13</time>
+            </p>
+        </header>
+    </article>
+
+    <hr/>
+
+    <!--heade元素-->
+    <!--原来的写法可能是如下：-->
+    <div class="header"></div>
+    <div class="content"></div>
+    <div class="footer"></div>
+    <!--现在的写法：-->
+    <header>
+        <h1>IT最新技术</h1>
+        <a href="www.jikexueyuan.com">极客学院</a>
+        <nav>
+            <ul>
+                <li>学习</li>
+                <li>生活</li>
+                <li>工作</li>
+            </ul>
+        </nav>
+    </header>
+    <article>
+        <header>
+            <h1>IT网站</h1>
+        </header>
+    </article>
+
+    <hr/>
+
+    <!--footer元素-->
+    <!--原来的写法：-->
+    <div class="footer">
+        <ul>
+            <li><a href="#">版权信息</a></li>
+            <li><a href="#">站点地图</a></li>
+            <li><a href="#">联系方式</a></li>
+        </ul>
+    </div>
+    <!--现在的写法：-->
+    <footer>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+    </footer>
+    <!--footer元素也不仅仅只用于网站的底部，同样可以用于区块的底部，如：-->
+    <article>
+        <footer></footer>
+    </article>
+
+    <hr/>
+
+    <!--hgroup元素-->
+    <article>
+        <header>
+            <hgroup>
+                <h1>这是一级标题</h1>
+                <h2>这是二级标题</h2>
+            </hgroup>
+        </header>
+        <div>这是文章内容</div>
+        <footer>
+            这是底部
+        </footer>
+    </article>
+
+    <hr/>
+
+    <canvas id="myCanvas" width="400px" height="200px" style="border:2px solid red">
+
+    </canvas>
+    <script>
+        var c=document.getElementById("myCanvas");
+        var ctx=c.getContext("2d");
+        ctx.fillStyle="#FF0000";
+        ctx.fillRect(0,0,150,75);
+    </script>
+
+
+</body>
+</html>

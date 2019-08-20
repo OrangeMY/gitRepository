@@ -1,0 +1,58 @@
+body{
+    background-color:darkgray;
+    background-repeat:no-repeat;
+    background-position:50px 50px;
+}
+
+#divid p{
+    color:blue;
+}
+
+.pclass{
+    background-color:yellow;
+    padding:20px;
+}
+
+a:link {
+    color:red;
+    text-decoration:none;
+}
+a:visited{
+    color:blue;
+}
+a:hover{
+    color:green;
+}
+
+#position1{
+    width:100px;
+    height:100px;
+    background-color:blue;
+    position:absolute;
+    left:20px;
+    top:20px;
+}
+
+#fd{
+    width:100px;
+    height:100px;
+    background-color:red;
+    float:left;
+}
+#sd{
+    width:100px;
+    height:100px;
+    background-color:blue;
+    float:left;
+}
+#td{
+    width:100px;
+    height:100px;
+    background-color:green;
+    float:left;
+}
+#container{
+    width:500px;
+    height:500px;
+    background-color: aquamarine;
+}
