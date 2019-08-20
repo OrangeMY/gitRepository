@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.cmy.dao.StudentDao">
+    <resultMap id="resultMap" type="cn.cmy.entity.Student">
+        <id property="sId" column="s_id" javaType="Integer"/>
+        <result property="sName" column="s_name" javaType="String"/>
+        <result property="sBirth" column="s_birth" javaType="java.util.Date"/>
+        <result property="sSex" column="s_sex" javaType="String"/>
+    </resultMap>
+    <insert id="insert" useGeneratedKeys="true">
+        insert into student(s_id, s_name, s_birth, s_sex) values(#{sId}, #{sName}, #{sBirth}, #{sSex})
+    </insert>
+    <update id="update" parameterType="cn.cmy.entity.Student">
+        update student set s_name = #{sName}, s_birth = #{sBirth}, s_sex = #{sSex} where s_id = #{sId}
+    </update>
+    <delete id="delete" parameterType="Integer">
+        delete from student where s_id = #{sId}
+    </delete>
+    <select id="selectById" parameterType="Integer" resultMap="resultMap">
+        select * from student where s_id = #{sId}
+    </select>
+    <select id="selectAll" resultMap="resultMap">
+        select * from student
+    </select>
+</mapper>
