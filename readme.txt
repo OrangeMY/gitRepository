@@ -4,3 +4,4 @@ my stupid boss like svn.
 hahhha
 <<<<<<< HEAD
 create a new branch is quik;and simple
+wodiercixiugai
