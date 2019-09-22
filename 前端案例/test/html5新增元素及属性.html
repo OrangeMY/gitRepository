@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <!--网页中所有链接都会在新窗口中打开-->
+        <base target="blank"/>
+    </head>
+    <body>
+        
+        <form action="xxx.php" method="post" name="userMessage">
+            用户名：<input type="text" value="派克钢笔"/><br/>
+            密码：<input type="password" /><br/>
+            性别：<input type="radio" name="sex"/>女 &nbsp;<input type="radio" name="sex"/>男<br/>
+            爱好：<br/>
+                <input type="checkbox" name="hobby"/>足球<br/>
+                <input type="checkbox" name="hobby"/>篮球<br/>
+                <input type="checkbox" name="hobby"/>羽毛球<br/>
+            <input type="submit" value="提交表单"/><br/>
+            <input type="reset" value="重置表单"/><br/>
+            上传头像：<input type="file" value="选择文件"/><br/>
+        </form>
+
+        
+
+        =========================================================================
+        <!-- ============================================================== -->
+        <hr/>
+
+        <!-- 特殊字符 -->
+        <h3>----------&nbsp;&nbsp;特殊字符&nbsp;&nbsp;-----------</h3>
+        我们的段落标签语法格式是：&lt;p&gt;段落&lt;/p&gt;
+
+        <hr />
+        <!-- tr标签只能放td标签 就像ul标签里面只能放li标签一样-->
+        <!-- 表格的属性
+             cellspacing：单元格之间的距离，
+             cellpadding：单元格内容在单元格内的padding属性
+             align：水平对齐方式
+         -->
+        <h3>我要做一个3*3表格</h3>
+        <table border="1px" width="200px" height="100px">
+            <!-- 表格的标题 跟着表格一块 -->
+            <caption>我是表格的标题</caption>
+            <!-- 表格中独有的表示 表头thead 和 表体tbody 的标签 -->
+            <thead>
+                <tr>
+                    <th>你</th>
+                    <th>是</th>
+                    <th>谁</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>姓名</td>
+                    <td>性别</td>
+                    <td>年龄</td>
+                </tr>
+                <tr>
+                    <td>我</td>
+                    <td>爱</td>
+                    <td>机车</td>
+                </tr>
+                <tr>
+                    <td>和</td>
+                    <td>s</td>
+                    <td>asd</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr/>
+        <!-- 当用label标签包裹起来时，当鼠标放在文字上时，就能自动锚点到输入框内 -->
+        <label>用户名：<input type="text"/></label> <br/>
+        <!-- 当有多个label标签时，想要定位到某个，  可以通过 for id  的格式来进行 -->
+        <label for="two">输入账号：<input type="text"/> <input type="text" id="two"/></label>
+        <input type="radio" name="sex"> 女  <input type="radio" name="sex"/>男
+
+        <hr/>
+        <!-- 文本域控件， cols：每行中显示的字符数  rows：显示的行数 -->
+        <!-- 一般很少使用 rols  rows  主要通过css控制文本域的长和宽 -->
+        <textarea cols="" rows=""></textarea>
+
+        <hr/>
+        <!-- 下拉菜单控件 -->
+        籍贯：
+        <select>
+            <option >北京</option>
+            <option selected="selected">上海</option>
+            <option>广州</option>
+            <option>杭州</option>
+        </select>
+
+        <hr/>
+        <!-- html5中的新元素  以及  区分html文档类型：html、xhtml、html5 -->
+        <header>语义：定义页面的头部   页眉</header>
+        <nav>语义：定义导航栏</nav>
+        <footer>语义：定义页面底部  页脚</footer>
+        <article>语义：定义文章</article>
+        <section>语义：定义区域</section>
+        <aside>语义：定义其所处内容之外的内容  侧边栏</aside>
+
+        <input type="text" value="输入机车品牌" list="moto"/><!--input里面用list-->
+        <datalist id="moto">                                <!--datalist里面用id来实现和input连接-->
+            <option>本田</option>
+            <option>雅马哈</option>
+            <option>川崎</option>
+            <option>铃木</option>
+        </datalist>
+
+        <!-- ============================================================================ -->
+        <hr/>
+        <br/><br/>
+        <fieldset>
+            <legend>用户登录</legend>
+            <form action="" method="post">
+                <!-- input元素中placeholder属性   提供可描述输入字段预期值的提示消息
+                        即：当用户输入时 里面的文字自动消失
+
+                     input元素中autofocus   即：规定当页面加载时，input元素自动获得焦点
+
+                     input元素中multiple属性，支持同时传输多个文件
+
+                     input元素中的autocomplete属性，显示用户的搜索记录，但有两个基本条件：
+                     1.用户必须提交表单
+                     2.input元素必须有名字
+
+                     input中的required属性，元素值不能为空
+
+                     input中的accesskey="s"属性，使元素获得焦点的快捷键，即为采用alt + s的形式
+                -->
+                用户名：<input type="text" placeholder="请输入用户名" autofocus/><br/>
+                密码：    <input type="password"/>
+                上传头像：<input type="file" multiple/>
+                姓名：<input type="text" autocomplete="on" name="userName" />
+                昵称：<input type="text" required accesskey="s"/>
+                <input type="submit"/>
+            </form>
+        </fieldset>
+
+        <!-- ============================================================================ -->
+
+        <br/><br/><br/>
+        <fieldset>
+                <legend>HTML5中 input属性  type新增的类型</legend>
+            <form action="">
+                邮箱：<input type="email"/><br/>   <!-- aa@aa.com -->
+                电话：<input type="tel"/><br/>     <!-- 手机格式 数字 -->
+                url：<input type="url"/><br/>     <!-- 网址的格式 -->
+                数字：<input type="number"/><br/> <!-- 只能输入数字 -->
+                搜索：<input type="search"><br/>  <!--搜索框-->
+                滑块：<input type="range"><br/>   <!--滑块-->
+                时间：<ipnut type="time"></ipnut><br/><!--小时分钟-->
+                年月日：<input type="date"><br/><!--获得年月日-->
+                年月：<input type="month"><br/><!-- 获得年月-->
+                星期：<input type="week"><br/><!--获得周-->
+                颜色：<input type="color"><br/><!--颜色-->
+
+                <input  type="submit"/>
+            </form>
+        </fieldset>
+        <br/><br/><br/>
+        <hr/>
+        <!-- ============================================================================ -->
+
+        <!-- audio控件，插入音频，controls属性会显示控制条，loop="2"  循环2次，loop="-1"  无限循环 -->
+        <audio src="bgsound.mp3" autoplay="autoplay" controls loop=-1></audio>
+
+        <!-- 同理 video控件，插入视频 -->
+        <video src="bgvideo.mp4" autoplay controls>
+
+        </video>
+        <br/><br/><br/>
+        <hr/>
+    </body>
+</html>

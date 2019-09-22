@@ -1,0 +1,67 @@
+html{
+    color:#000;
+    background:#FFF;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td{ 
+    margin:0px;
+    padding:0px;
+}
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+em,
+strong,
+b,
+i,
+u{
+    font-style:normal;
+    font-weight:normal;
+}
+ol,
+ul{
+    list-style:none;
+}
+h1,
+h2,
+h3{
+    font-size:100%;
+    font-weight:normal;
+}
+input,
+textarea,
+select{
+    font-family:inherit;
+    font-size:inherit;
+    font-weight:inherit;
+}
+img{
+    border:0 none;
+}
+a{
+	text-decoration: none;
+}
+input{
+    border:none;
+}
+button{
+    border:none;
+}
